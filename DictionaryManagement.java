@@ -60,7 +60,7 @@ public class DictionaryManagement {
         for (int i = 0; i < Dictionary.Words.size(); i++) {
             String tmp = Dictionary.Words.get(i).getWord_target();
             if (tmp.contains (lookWord)){
-                System.out.printf("%-10s%-30s%s\n", i + 1, Dictionary.Words.get(i).getWord_target(),
+                System.out.printf("%-10s%-20s%s\n", i + 1, Dictionary.Words.get(i).getWord_target(),
                             Dictionary.Words.get(i).getWord_explain());          
                 //System.out.println (Dictionary.Words.get(i).getWord_explain());
                 check = true;
