@@ -1,0 +1,4 @@
+hi:xin chào
+hello:chào
+hurt:ðau
+love:yêu
