@@ -7,6 +7,8 @@ package dictionary;
 
 
 import java.io.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -16,9 +18,7 @@ import java.util.*;
  */
 public class DictionaryManagement {
     Scanner sc = new Scanner(System.in);
-     public int getSize(){
-        return Dictionary.Words.size();
-    }
+     
     public void  insertFromCommandline(){                  
         String word_explain;
         String word_target;
@@ -103,4 +103,17 @@ public class DictionaryManagement {
             }
         }
     }
+     public void dictionaryExportToFile()  {
+        try {
+	     FileWriter writer = new FileWriter("Dictionary.txt");
+	     for (int i = 0; i < Dictionary.Words.size(); i++)
+	             writer.write(Dictionary.Words.get(i).getWord_target() + "\t" + Dictionary.Words.get(i).getWord_explain() + "\n");
+	            writer.close();
+	        }
+	        catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+    
+
 }
