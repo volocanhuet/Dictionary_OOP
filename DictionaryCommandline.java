@@ -41,10 +41,13 @@ public class DictionaryCommandline {
     
     
       public static void main(String[] args)throws IOException {     // ham main goi ham dictionaryAdvanced va ham dictionaryBasic
-        DictionaryCommandline dictCom = new DictionaryCommandline();
-        dictCom.dictionaryAdvanced();
-//      dictCom.DictionarySearcher();
         
+        Dict.insertFromFile();//trung anh code
+        DictionaryManagement dict1 = new DictionaryManagement();
+        while(true){
+            dict1.dictionaryLookupPlus();
+            dict1.deleteWord();
+        }
         
      }
 }
