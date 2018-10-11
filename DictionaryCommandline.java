@@ -14,7 +14,7 @@ import java.io.IOException;
 public class DictionaryCommandline {                                
     static DictionaryManagement Dict = new DictionaryManagement();
      public void showAllWords() {                                    //show tất cả cá từ trong file
-        int size = Dict.getSize();
+        int size = Dictionary.Words.size();
         System.out.printf("%-10s%-20s%s\n","STT","English","Viet");
         for(int i = 0 ; i < size ; i++) {          
             System.out.printf("%-10s%-20s%s\n", i + 1, Dictionary.Words.get(i).getWord_target(),
