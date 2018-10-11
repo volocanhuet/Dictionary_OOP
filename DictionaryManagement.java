@@ -32,19 +32,43 @@ public class DictionaryManagement {
             Dictionary.Words.add(new Word(word_target, word_explain));
          }    
     }
-    public void insertFromFile() throws IOException{        //trung anh code them doc file
-        Scanner inputDic = new Scanner(Paths.get("dictionary.txt"));
+    public void insertFromFile() throws IOException{        //code them doc file
+        Scanner inputDic = new Scanner(Paths.get("dictionary3k.txt"));
         while(inputDic.hasNextLine()){
-            String[] temp = inputDic.nextLine().split(":");
-            Dictionary.Words.add(new Word(temp[0], temp[1]));
+            String[] temp = inputDic.nextLine().split(" "); //them
+            String tu = temp[0];
+            String nghia = "";
+            for (int i = 1; i < temp.length; i++){
+                nghia +=temp[i];
+            }
+            Dictionary.Words.add(new Word(tu, nghia));
+//            Dictionary.Words.add(new Word(temp[0], temp[1]));
         }
     }
+    
     public void dictionaryLookup() {
         String lookWord = sc.nextLine();
         for (int i = 0; i < Dictionary.Words.size(); i++) {
             if (lookWord.equals(Dictionary.Words.get(i).getWord_target()))
                 System.out.println(Dictionary.Words.get(i).getWord_explain());
                 
+        }
+    }
+    public void dictionaryLookupPlus() {    //tim tu + goi ý 
+        String lookWord = sc.nextLine();
+        boolean check = false;
+        for (int i = 0; i < Dictionary.Words.size(); i++) {
+            String tmp = Dictionary.Words.get(i).getWord_target();
+            if (tmp.contains (lookWord)){
+                System.out.printf("%-10s%-30s%s\n", i + 1, Dictionary.Words.get(i).getWord_target(),
+                            Dictionary.Words.get(i).getWord_explain());          
+                //System.out.println (Dictionary.Words.get(i).getWord_explain());
+                check = true;
+                
+            }                
+        }
+        if (!check){
+            System.out.println(lookWord);
         }
     }
     public void addWord() {      
