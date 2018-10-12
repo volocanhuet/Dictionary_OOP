@@ -16,9 +16,7 @@ import java.util.Scanner;
  */
 public class DictionaryManagement {
     Scanner sc = new Scanner(System.in);
-     public int getSize(){
-        return Dictionary.Words.size();
-    }
+     
     public void  insertFromCommandline(){                  
         String word_explain;
         String word_target;
