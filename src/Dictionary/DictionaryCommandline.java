@@ -30,6 +30,7 @@ public class DictionaryCommandline {
      }
     public void  dictionaryAdvanced() throws IOException {   //them ham dictionaryAdvanced nhap cac yeu cau
         Dict.insertFromFile();
+        for(;;) {
         
             System.out.println("1  Tra tu");
             System.out.println("2  Tra tu nang cao");
@@ -69,6 +70,7 @@ public class DictionaryCommandline {
           
 
         } 
+    }
     
     public static void main(String[] args)throws IOException {     // ham main goi ham dictionaryAdvanced va ham dictionaryBasic
        DictionaryCommandline dictCom = new DictionaryCommandline();
