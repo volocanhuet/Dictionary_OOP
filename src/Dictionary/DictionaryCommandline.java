@@ -58,11 +58,14 @@ public class DictionaryCommandline {
                     break;
                 case 5:
                     Dict.deleteWord();
+                    break;
                 case 6 : 
                     showAllWords();
+                    break;
                  default :
                      System.out.println("Ban da thoat");
                       System.exit(0);
+                    break;
                      
            
                    
