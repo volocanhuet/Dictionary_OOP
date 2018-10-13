@@ -87,7 +87,7 @@ public class DictionaryManagement {
         System.out.println("Nhap tu muon xoa :");
         String deleteWord = sc.nextLine();
         for (int i = 0; i < Dictionary.Words.size(); i++) {
-            if (deleteWord.equalsIgnoreCase(Dictionary.Words.get(i).getWord_target())) {
+            if (deleteWord.equals(Dictionary.Words.get(i).getWord_target())) {
                 Dictionary.Words.remove(i);
             }
         }
@@ -98,7 +98,7 @@ public class DictionaryManagement {
         System.out.println("Nhap tu muốn sua : ");
         String str = sc.nextLine();
         for (int i = 0; i < Dictionary.Words.size(); i++) {
-            if (str.equalsIgnoreCase(Dictionary.Words.get(i).getWord_target())) {
+            if (str.equals(Dictionary.Words.get(i).getWord_target())) {
                 System.out.print("Từ  : ");
                 Dictionary.Words.get(i).setWord_target(sc.nextLine());
                 System.out.print("Nghĩa : ");  
