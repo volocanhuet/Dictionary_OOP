@@ -110,7 +110,7 @@ public class DictionaryManagement {
         try {
 	      FileWriter write = new FileWriter("Dictionary.txt");
 	     for (int i = 0; i < Dictionary.Words.size(); i++)
-	             write.write(Dictionary.Words.get(i).getWord_target() + ":" + Dictionary.Words.get(i).getWord_explain() + "\n");
+	             write.write(Dictionary.Words.get(i).getWord_target() + ":" + Dictionary.Words.get(i).getWord_explain() + "\r\n");
 	            write.close();
 	        }
 	        catch (IOException e) {
