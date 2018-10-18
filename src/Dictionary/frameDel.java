@@ -15,10 +15,6 @@ public class frameDel extends DictionaryManagement{
     public JLabel Eng,Vie ;
     public JTextField engText, vieText;
     public void delete() throws IOException{
-        
-        
-        
-        
         // init
         engText = new JTextField();                 //khoi tao + ten
         vieText = new JTextField();
@@ -52,33 +48,8 @@ public class frameDel extends DictionaryManagement{
             try {
                 deleteWordFrame(engText.getText());
             } catch (IOException ex) {
-                Logger.getLogger(frameDel.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
             delFrame.setVisible(false);
         });
-    }
-    public void actionPerformed(ActionEvent e) throws IOException {    //xu ly khi nhan vao nut 
-        JButton press = (JButton) e.getSource();
-        if (press == okButton){
-            deleteWordFrame(engText.getText());
-            
-            
-        }
-        
-        
-    }
-//    public void removeWord(){
-//        int a = JOptionPane.show
-//                
-//        //int a = JOptionPane.showConfirmDialog("Are you sure?","Delete",0);
-//        if (a == 0){
-//            JList list = new JList();
-//            list.remove();
-//            //.remove(Index);
-//            //output.setText(null);
-//        //getList();
-//        //file.ghiDS(listW,"a.txt");
-//        }
-//    };    
+    }    
 }
