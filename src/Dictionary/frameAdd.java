@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dictionary;
 
-import static dictionary.Dictionary.Words;
 import java.awt.event.*;
+import java.io.IOException;
 import javax.swing.*;
 
-/**
- *
- * @author Administrator
- */
 public class frameAdd extends DictionaryManagement {
     @SuppressWarnings("empty-statement")
-    @Override
     public void addWord(){
         JFrame addFrame = new JFrame();
         JButton okButton;
@@ -42,9 +32,6 @@ public class frameAdd extends DictionaryManagement {
         engText.setBounds(75, 15, 200, 30);
         Vie.setBounds(10, 40, 70, 50);
         vieText.setBounds(75, 50, 200, 30);
-        //tWord.setBounds(10,75, 50, 50);
-        //Type.setBounds(75, 85, 100, 30);
-        //status.setBounds(75, 160, 200, 30);
         
         addFrame.add(Eng);
         addFrame.add(Vie);
@@ -62,28 +49,17 @@ public class frameAdd extends DictionaryManagement {
         addFrame.setLayout(null);
         addFrame.setVisible(true);  
         // action
-        okButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Word newWord = new Word(engText.getText(), (String) Type.getSelectedItem(),vieText.getText());
-                Word addWord = new Word(engText.getText(),vieText.getText() );
-                //dictionaryExportToFile();
-                //Words them = new Word(word_target, word_explain)
-                addFrame.setVisible(false);
-                
+        okButton.addActionListener((ActionEvent e) -> {
+            Word addWord = new Word(engText.getText(), vieText.getText() );
+            Dictionary.Words.add(addWord );
+            addFrame.setVisible(false);
+            try {
+                dictionaryExportToFile();
+            } catch (IOException ex) {
             }
         });
-
-        
-        
         cancelButton.addActionListener((ActionEvent e) -> {
             addFrame.setVisible(false);
         });
-        
-        
-    
     }
-    
-
-
 }
