@@ -24,19 +24,26 @@ public class DicJF extends DictionaryManagement implements ActionListener {
     private final DefaultListModel<String> readJL = new DefaultListModel<>();
     public final void Init() throws IOException{
         frame = new JFrame();        
+        ImageIcon seach = new ImageIcon("icon\\seach.png");
+        ImageIcon fix  = new ImageIcon("icon\\fix.png");
+        ImageIcon add  = new ImageIcon("icon\\add.png");
+        ImageIcon cancel  = new ImageIcon("icon\\cancel.png");
+        ImageIcon del = new ImageIcon("icon\\del.png");
+        ImageIcon sound = new ImageIcon("icon\\sound.png");
         
-        SuaTuButton = new JButton("Sửa Từ");
-        SuaTuButton.setBounds(200, 190, 90, 30);
-        exitButton = new JButton("Thoát");       //thoat
-        exitButton.setBounds(200, 250, 90, 30);
-        dichButton = new JButton("Dịch");       // dich
-        dichButton.setBounds(200, 30, 90, 30);
-        PhatAmButton = new JButton("Phát Âm");  // phat am
-        PhatAmButton.setBounds(200, 70, 90, 30);
-        XoaTuButton = new JButton("Xóa Từ");    // xoa tu
-        XoaTuButton.setBounds(200, 110, 90, 30);
-        ThemTuButton = new JButton("Thêm Từ");  //them tu
-        ThemTuButton.setBounds(200, 150, 90, 30);
+        
+        SuaTuButton = new JButton("", fix);
+        SuaTuButton.setBounds(150, 190, 90, 30);
+        exitButton = new JButton("exit", cancel);       //thoat
+        exitButton.setBounds(150, 250, 90, 30);
+        dichButton = new JButton("", seach);       // dich
+        dichButton.setBounds(150, 30, 90, 30);
+        PhatAmButton = new JButton("", sound);  // phat am
+        PhatAmButton.setBounds(150, 70, 90, 30);
+        XoaTuButton = new JButton("del",del);    // xoa tu
+        XoaTuButton.setBounds(150, 110, 90, 30);
+        ThemTuButton = new JButton("add",add);  //them tu
+        ThemTuButton.setBounds(150, 150, 90, 30);
         input = new JTextField("");             //input
         input.setBounds(10, 20, 170, 50);
         dicList = new JList();                  //goi y
